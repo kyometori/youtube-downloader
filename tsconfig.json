@@ -1,0 +1,18 @@
+{
+	// Mapped from https://www.typescriptlang.org/tsconfig
+	"compilerOptions": {
+		"strict": true,
+		"useUnknownInCatchVariables": true,
+		"moduleResolution": "node",
+		"declaration": true,
+		"importHelpers": true,
+		"importsNotUsedAsValues": "error",
+		"inlineSources": true,
+		"noEmitHelpers": true,
+		"outDir": "dist",
+		"preserveConstEnums": true,
+		"sourceMap": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true
+	}
+}
