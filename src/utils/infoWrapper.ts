@@ -1,5 +1,5 @@
 import ytdl from 'ytdl-core';
-import type { YoutubeUrl, DownloadInfos, YTDLVideoData, VideoData, AudioData } from './types';
+import type { YoutubeUrl, DownloadInfos, YTDLVideoData, VideoData, AudioData } from '../types';
 
 const videoQuality: { [key: string]: number } = {
   'hd2160': 8,
@@ -12,7 +12,7 @@ const videoQuality: { [key: string]: number } = {
   'tiny': 1
 }
 
-export async function getInfo(url: YoutubeUrl): Promise<DownloadInfos> {
+export async function getDownloadInfo(url: YoutubeUrl): Promise<DownloadInfos> {
   // get info of the given url
   const info = await ytdl.getInfo(url).catch(() => undefined);
 

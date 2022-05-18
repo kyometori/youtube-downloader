@@ -1,1 +1,1 @@
-export * from './src/infoWrapper';
+export * from './src/utils/infoWrapper';
