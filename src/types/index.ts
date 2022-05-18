@@ -28,3 +28,20 @@ export interface filenameResolverOptions {
   title: string,
   index: number
 }
+
+export interface DownloadOptions {
+  url: YoutubeUrl,
+  filename: string,
+  index: number,
+  folder: string,
+  audioonly: boolean
+}
+
+export interface getDownloadEvalContextArg {
+  title: string,
+  folder: string,
+  video: string,
+  audio: string,
+  audioonly: boolean,
+  videoHasAudio: boolean
+}
