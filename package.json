@@ -1,6 +1,5 @@
 {
   "name": "youtube-downloader",
-  "packageManager": "yarn@3.2.0",
   "scripts": {
     "build": "tsup",
     "test": "node test.mjs"
