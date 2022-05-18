@@ -5,6 +5,9 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ], 
   "scripts": {
     "build": "tsup",
     "test": "node test.mjs"
@@ -19,7 +22,7 @@
     "download"
   ],
   "author": "kyometori",
-  "license": "MIT", 
+  "license": "MIT",
   "devDependencies": {
     "@types/ffmpeg-static": "^3.0.1",
     "@types/node": "^17.0.34",
