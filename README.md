@@ -1,4 +1,10 @@
 # Youtube Downloader
+[![npm version](https://img.shields.io/npm/v/@kyometori/yt-downloader.svg?maxAge=3600)](https://www.npmjs.com/package/@kyometori/yt-downloader)
+[![Downloads](https://img.shields.io/npm/dt/@kyometori/yt-downloader.svg?maxAge=3600)](https://www.npmjs.com/package/@kyometori/yt-downloader)
+[![Last Commit](https://img.shields.io/github/last-commit/kyometori/youtube-downloader)](https://github.com/kyometori/youtube-downloader)
+[![Code Size](https://img.shields.io/github/languages/code-size/kyometori/youtube-downloader)](https://github.com/kyometori/youtube-downloader)
+![License](https://img.shields.io/github/license/kyometori/youtube-downloader)
+
 一個簡單的 Youtube 影音下載小工具。
 
 ## 使用前
