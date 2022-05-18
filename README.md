@@ -14,15 +14,15 @@ npm i --save @kyometori/yt-downloader
 首先，先引入此套件
 ```js
 /* CommonJS */
-const YoutubeDownloader = require('@kyometori/yt-downloader');
+const { videoDownload, videosDownload, playlistDownload } = require('@kyometori/yt-downloader');
 
 /* ModuleJS */
-import YoutubeDownloader from '@kyometori/yt-downloader'
+import { videoDownload, videosDownload, playlistDownload } from '@kyometori/yt-downloader'
 ```
 
 ### 下載單一影片
 ```js
-YoutubeDownloader.videoDownload({ ...options });
+videoDownload({ ...options });
 ```
 其中 options 包括以下內容：
 - `url`：目標影片連結
@@ -33,7 +33,7 @@ YoutubeDownloader.videoDownload({ ...options });
 回傳值：`Promise<ChildProcess>`  
 範例：
 ```js
-YoutubeDownloader.videoDownload({
+videoDownload({
   url: 'https://www.youtube.com/watch?v=qX1xe1RzA94',
   filename: 'audio',
   folder: '../music',
@@ -43,7 +43,7 @@ YoutubeDownloader.videoDownload({
 
 ### 批量下載影片
 ```js
-YoutubeDownloader.videosDownload({ ...options });
+videosDownload({ ...options });
 ```
 其中 options 包括以下內容：
 - `urls`：一個陣列，裡面是所有要被下載的影片連結。
@@ -54,7 +54,7 @@ YoutubeDownloader.videosDownload({ ...options });
 回傳值：`Promise<ChildProcess>[]`  
 範例：
 ```js
-YoutubeDownloader.videosDownload({
+videosDownload({
   urls: [
     'https://www.youtube.com/watch?v=35FxbLTlGNI',
     'https://www.youtube.com/watch?v=OTRcHcyolUM',
@@ -71,7 +71,7 @@ YoutubeDownloader.videosDownload({
 
 ### 下載播放清單
 ```js
-YoutubeDownloader.playlistDownload({...options});
+playlistDownload({...options});
 ```
 其中 options 包括以下內容：
 - `url`：目標播放清單連結
@@ -82,7 +82,7 @@ YoutubeDownloader.playlistDownload({...options});
 回傳值：`Promise<Promise<ChildProcess>[]>`  
 範例：
 ```js
-YoutubeDownloader.playlistDownload({
+playlistDownload({
     url: 'https://www.youtube.com/playlist?list=PLFPTffQioGfYFs7Az7h0PusfVyCPI6iVe',
     folder: 'exports',
     audioonly: false
@@ -101,7 +101,7 @@ YoutubeDownloader.playlistDownload({
 
 範例程式：
 ```js
-dl.playlistDownload({
+playlistDownload({
     url: 'https://www.youtube.com/playlist?list=PLGejWpTS0U0Ix0pa3UZJE4LMWGm7IHcqs',
     folder: 'goodmusics',
     filename: '<year>-<month>-<date>_<index>'
