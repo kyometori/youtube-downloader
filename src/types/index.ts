@@ -22,3 +22,9 @@ export interface DownloadInfos {
   audio: string,
   videoHasAudio: boolean
 }
+
+export interface filenameResolverOptions {
+  markdown: string,
+  title: string,
+  index: number
+}
