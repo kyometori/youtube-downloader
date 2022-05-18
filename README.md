@@ -8,7 +8,7 @@
 一個簡單的 Youtube 影音下載小工具。
 
 ## 使用前
-在你始用之前，你必需自行安裝以下套件：
+在你使用之前，你必須自行安裝以下套件：
 - [`ffmpeg-static`](https://www.npmjs.com/package/ffmpeg-static)
 
 然後安裝此套件
