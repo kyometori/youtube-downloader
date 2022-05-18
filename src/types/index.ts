@@ -45,3 +45,19 @@ export interface getDownloadEvalContextArg {
   audioonly: boolean,
   videoHasAudio: boolean
 }
+
+export interface VideoDownloadOptions {
+  url: YoutubeUrl,
+  filename: string,
+  folder: string,
+  audioonly: boolean
+}
+
+export interface VideosDownloadOptions {
+  urls: YoutubeUrl[],
+  filename: string,
+  folder: string,
+  audioonly: boolean
+}
+
+export type PlaylistDownloadOptions = VideoDownloadOptions;

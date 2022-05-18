@@ -1,4 +1,4 @@
-export * from './src/utils/infoWrapper';
-export * from './src/utils/filenameResolver';
-export * from './src/utils/playlistResolver';
-export * from './src/utils/download';
+export * from './src/types';
+
+import * as Downloader from './src';
+export default Downloader;
