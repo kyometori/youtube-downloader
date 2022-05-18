@@ -1,7 +1,6 @@
 import { Worker } from 'node:worker_threads';
 import { existsSync, mkdirSync } from 'node:fs';
 import { ChildProcess, exec } from 'node:child_process';
-import { join } from 'node:path';
 import type { YoutubeUrl, DownloadOptions, getDownloadEvalContextArg } from '../types';
 import { getDownloadInfo } from './infoWrapper';
 import { filenameResolver } from './filenameResolver';
