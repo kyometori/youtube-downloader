@@ -1,6 +1,6 @@
 {
   "name": "@kyometori/yt-downloader",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "一個簡單的 Youtube 下載函式庫",
   "main": "./dist/index.js",
   "exports": "./dist/index.mjs",
