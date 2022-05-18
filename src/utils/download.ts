@@ -7,6 +7,16 @@ import { filenameResolver } from './filenameResolver';
 import ffmpeg from 'ffmpeg-static';
 import shell from 'shell-escape';
 
+const childprocessManager = new Set<ChildProcess>();
+const processExitEvents = [`exit`, `SIGINT`, `SIGUSR1`, `SIGUSR2`, `uncaughtException`, `SIGTERM`];
+const childExitEvents = [`exit`, `error`, `disconnect`];
+
+processExitEvents.forEach((eventType) => process.on(eventType, function () {
+  childprocessManager.forEach(childprocess => {
+    childprocess.kill();
+  });
+}));
+
 export async function download({
   url, filename, index, folder, audioonly
 }: DownloadOptions): Promise<ChildProcess> {
@@ -27,24 +37,10 @@ export async function download({
     audioonly, folder, video, audio, videoHasAudio
   }));
 
-  function cleanUp() {
-    try {
-      proc.kill();
-      process.exit();
-    } catch {}
-  };
-
-  const processExitEvents = [`exit`, `SIGINT`, `SIGUSR1`, `SIGUSR2`, `uncaughtException`, `SIGTERM`];
-  const childExitEvents = [`exit`, `error`, `disconnect`];
-
-  processExitEvents.forEach((eventType) => {
-    process.on(eventType, cleanUp);
-  });
+  childprocessManager.add(proc);
 
   childExitEvents.forEach((eventType) => {
-    proc.on(eventType, () => {
-      processExitEvents.forEach((processEventType) => process.removeListener(processEventType, cleanUp));
-    });
+    childprocessManager.delete(proc);
   });
 
   return proc;
