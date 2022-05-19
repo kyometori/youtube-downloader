@@ -1,4 +1,3 @@
-import { Worker } from 'node:worker_threads';
 import { existsSync, mkdirSync } from 'node:fs';
 import { ChildProcess, exec } from 'node:child_process';
 import type { YoutubeUrl, DownloadOptions, getDownloadEvalContextArg } from '../types';
@@ -40,7 +39,13 @@ export async function download({
   childprocessManager.add(proc);
 
   childExitEvents.forEach((eventType) => {
-    childprocessManager.delete(proc);
+    proc.on(eventType, function () {
+      childprocessManager.delete(proc);
+
+      childExitEvents.forEach((et) => {
+        proc.removeListener(et, this);
+      });
+    })
   });
 
   return proc;
